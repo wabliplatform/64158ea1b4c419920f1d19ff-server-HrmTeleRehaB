@@ -1,0 +1,551 @@
+openapi: 3.0.1
+info:
+  contact:
+    email: lampralexandros@gmail.com
+  description: This is a sample openApi document
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://wabli.netlify.app/
+  title: TempApi
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+- description: local-host
+  url: http://localhost:8090/v1
+security:
+- {}
+tags:
+- description: not yet ready
+  name: p
+- description: not yet ready
+  name: doctor
+- description: not yet ready
+  name: room
+- description: not yet ready
+  name: equipment
+paths:
+  /p:
+    post:
+      operationId: createp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/p'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/p'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - p
+      x-eov-operation-handler: controllers/PController
+  /p/{pId}:
+    delete:
+      operationId: deletep
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: pId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - p
+      x-eov-operation-handler: controllers/PController
+    get:
+      operationId: getp
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: pId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/p'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - p
+      x-eov-operation-handler: controllers/PController
+    put:
+      operationId: updatep
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: pId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/p'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/p'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - p
+      x-eov-operation-handler: controllers/PController
+  /p/getAll:
+    get:
+      operationId: getAllp
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/p'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - p
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/PController
+  /doctor:
+    post:
+      operationId: createdoctor
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/doctor'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/doctor'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - doctor
+      x-eov-operation-handler: controllers/DoctorController
+  /doctor/{doctorId}:
+    delete:
+      operationId: deletedoctor
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: doctorId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - doctor
+      x-eov-operation-handler: controllers/DoctorController
+    get:
+      operationId: getdoctor
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: doctorId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/doctor'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - doctor
+      x-eov-operation-handler: controllers/DoctorController
+    put:
+      operationId: updatedoctor
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: doctorId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/doctor'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/doctor'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - doctor
+      x-eov-operation-handler: controllers/DoctorController
+  /doctor/getAll:
+    get:
+      operationId: getAlldoctor
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/doctor'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - doctor
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/DoctorController
+  /room:
+    post:
+      operationId: createroom
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/room'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/room'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - room
+      x-eov-operation-handler: controllers/RoomController
+  /room/{roomId}:
+    delete:
+      operationId: deleteroom
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: roomId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - room
+      x-eov-operation-handler: controllers/RoomController
+    get:
+      operationId: getroom
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: roomId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/room'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - room
+      x-eov-operation-handler: controllers/RoomController
+    put:
+      operationId: updateroom
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: roomId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/room'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/room'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - room
+      x-eov-operation-handler: controllers/RoomController
+  /room/getAll:
+    get:
+      operationId: getAllroom
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/room'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - room
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/RoomController
+  /equipment:
+    post:
+      operationId: createequipment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/equipment'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/equipment'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - equipment
+      x-eov-operation-handler: controllers/EquipmentController
+  /equipment/{equipmentId}:
+    delete:
+      operationId: deleteequipment
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: equipmentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - equipment
+      x-eov-operation-handler: controllers/EquipmentController
+    get:
+      operationId: getequipment
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: equipmentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/equipment'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - equipment
+      x-eov-operation-handler: controllers/EquipmentController
+    put:
+      operationId: updateequipment
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: equipmentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/equipment'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/equipment'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - equipment
+      x-eov-operation-handler: controllers/EquipmentController
+  /equipment/getAll:
+    get:
+      operationId: getAllequipment
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/equipment'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - equipment
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/EquipmentController
+components:
+  schemas:
+    p:
+      example:
+        ptitle: ptitle
+        _id: _id
+      properties:
+        _id:
+          type: string
+        ptitle:
+          type: string
+      required:
+      - ptitle
+      type: object
+    doctor:
+      example:
+        dLeave: dLeave
+        dSpecial: dSpecial
+        dAge: 0.8008281904610115
+        dName: dName
+        _id: _id
+        dGender: dGender
+      properties:
+        _id:
+          type: string
+        dName:
+          type: string
+        dSpecial:
+          type: string
+        dAge:
+          format: double
+          type: number
+        dGender:
+          type: string
+        dLeave:
+          type: string
+      required:
+      - dAge
+      - dGender
+      - dLeave
+      - dName
+      - dSpecial
+      type: object
+    room:
+      example:
+        rEmpty: rEmpty
+        rName: rName
+        _id: _id
+        rFloor: 0.8008281904610115
+        rAisle: 6.027456183070403
+      properties:
+        _id:
+          type: string
+        rName:
+          type: string
+        rFloor:
+          format: double
+          type: number
+        rAisle:
+          format: double
+          type: number
+        rEmpty:
+          type: string
+      required:
+      - rAisle
+      - rEmpty
+      - rFloor
+      - rName
+      type: object
+    equipment:
+      example:
+        eqName: eqName
+        eqCost: 0.8008281904610115
+        eqFix: eqFix
+        _id: _id
+        eqType: eqType
+      properties:
+        _id:
+          type: string
+        eqName:
+          type: string
+        eqType:
+          type: string
+        eqCost:
+          format: double
+          type: number
+        eqFix:
+          type: string
+      required:
+      - eqCost
+      - eqFix
+      - eqName
+      - eqType
+      type: object
