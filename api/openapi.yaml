@@ -14,7 +14,7 @@ externalDocs:
   url: http://swagger.io
 servers:
 - description: solid-spoon
-  url: https://wabli-solid-spoon.cyclopt.services:3001/v1
+  url: http://83.212.100.226:3001/v1
 security:
 - {}
 tags:
