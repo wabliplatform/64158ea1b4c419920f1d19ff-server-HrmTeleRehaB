@@ -6,7 +6,6 @@ config.js
 controllers/Controller.js
 controllers/DoctorController.js
 controllers/EquipmentController.js
-controllers/PController.js
 controllers/RoomController.js
 controllers/index.js
 expressServer.js
@@ -14,14 +13,12 @@ index.js
 logger.js
 models/Doctor.js
 models/Equipment.js
-models/P.js
 models/Room.js
 models/index.js
 mongooseDB.js
 package.json
 services/DoctorService.js
 services/EquipmentService.js
-services/PService.js
 services/RoomService.js
 services/Service.js
 services/index.js

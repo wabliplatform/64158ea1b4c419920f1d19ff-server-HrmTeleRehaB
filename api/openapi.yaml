@@ -19,121 +19,12 @@ security:
 - {}
 tags:
 - description: not yet ready
-  name: p
-- description: not yet ready
   name: doctor
 - description: not yet ready
   name: room
 - description: not yet ready
   name: equipment
 paths:
-  /p:
-    post:
-      operationId: createp
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/p'
-        description: data to be created
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/p'
-          description: successful operation
-      summary: Creates the data
-      tags:
-      - p
-      x-eov-operation-handler: controllers/PController
-  /p/{pId}:
-    delete:
-      operationId: deletep
-      parameters:
-      - description: the Id parameter
-        explode: false
-        in: path
-        name: pId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: successful operation
-      summary: Delete the element
-      tags:
-      - p
-      x-eov-operation-handler: controllers/PController
-    get:
-      operationId: getp
-      parameters:
-      - description: the Id parameter
-        explode: false
-        in: path
-        name: pId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/p'
-          description: successful operation
-      summary: Get the element
-      tags:
-      - p
-      x-eov-operation-handler: controllers/PController
-    put:
-      operationId: updatep
-      parameters:
-      - description: the Id parameter
-        explode: false
-        in: path
-        name: pId
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/p'
-        description: data to be updated
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/p'
-          description: successful operation
-      summary: Updates the element
-      tags:
-      - p
-      x-eov-operation-handler: controllers/PController
-  /p/getAll:
-    get:
-      operationId: getAllp
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/p'
-                type: array
-          description: successful operation
-      summary: Get all the data
-      tags:
-      - p
-      x-method-getAll: "true"
-      x-eov-operation-handler: controllers/PController
   /doctor:
     post:
       operationId: createdoctor
@@ -457,18 +348,6 @@ paths:
       x-eov-operation-handler: controllers/EquipmentController
 components:
   schemas:
-    p:
-      example:
-        ptitle: ptitle
-        _id: _id
-      properties:
-        _id:
-          type: string
-        ptitle:
-          type: string
-      required:
-      - ptitle
-      type: object
     doctor:
       example:
         dLeave: dLeave
